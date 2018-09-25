@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="fixed">
+			
+			<div>
+				<a href="" class="app">
+					<img src="img/app-text.png"/>
+					<img src="img/app-ewm.png"/>
+				</a>
+			</div>
+			<div>
+				<a href="" class="goweibo"></a>
+			</div>
+			<div>
+				<a href="" class="gotop"></a>
+			</div>
+		</div>
+		
+		<style type="text/css">
+			.fixed{
+				position: fixed;
+				right: 20px;
+				bottom: 20px;
+			}
+			a.app{
+				width: 82px;
+				height: 82px;
+				background-color: rgba(96,52,18,.6);
+				border-radius: 50%;
+				display: inline-block;
+				
+				position: relative;
+				/*animation: myfirst 5s;
+				-webkit-animation: myfirst 5s; */
+			}
+			
+			a.app img{
+				transition: all 1.5s;
+			}
+			a.app img:first-of-type{
+				position: absolute;
+				transform: rotateY(0deg);
+				-webkit-transform: rotateY(0deg);
+				/*z-index: 10;*/
+			}
+			a.app img:last-of-type{
+				position: absolute;
+				top: 0;
+				left: 0;
+				visibility: hidden;
+				/*z-index: -10;*/
+				transform: rotateY(90deg);
+				-webkit-transform: rotateY(90deg);
+			}
+			
+			
+			a:hover img:first-of-type{
+				transform: rotateY(360deg);
+				-webkit-transform: rotateY(360deg);
+			}
+			a:hover img:last-of-type{
+				visibility: visible;
+				transform: rotateY(-90deg);
+				-webkit-transform: rotateY(-90deg);
+			}
+			
+			a.goweibo{
+				width: 82px;
+				height: 82px;
+				/*background-color: rgba(96,52,18,.6);*/
+				border-radius: 50%;
+				display: inline-block;
+				background: rgba(96,52,18,.6) url(img/weibo-icon.png) no-repeat;
+			}
+			a.gotop{
+				width: 82px;
+				height: 82px;
+				/*background-color: rgba(96,52,18,.6);*/
+				border-radius: 50%;
+				display: inline-block;
+				background: rgba(96,52,18,.6) url(img/gotop-icon.png) no-repeat;
+			}
+			/*@keyframes myfirst{
+				from{
+					a.app img:first-of-type{
+						transform: rotateY(180deg);
+					}
+				}
+				to{
+					a.app img:last-of-type{
+						visibility: visible;
+						transform: rotateY(-180deg);
+					}
+				}
+			}
+			@-webkit-keyframes myfirst{
+				from{
+					a.app img:first-of-type{
+						transform: rotateY(180deg);
+					}
+				}
+				to{
+					a.app img:last-of-type{
+						visibility: visible;
+						transform: rotateY(-180deg);
+					}
+				}
+			}*/
+		</style>
+	</body>
+</html>

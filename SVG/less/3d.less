@@ -1,0 +1,195 @@
+body{
+    margin: 0;
+}
+.bground{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    background: linear-gradient(120deg, rgba(60, 100, 100, 0.3), rgba(20, 0, 100, 0.5));
+    position: relative;
+    overflow: hidden;
+    perspective: 1500px;
+}
+input{
+    display: none;
+
+    +.card{
+        width: 400px;
+        height: 500px;
+        // background: red;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        transform-style: preserve-3d;
+        transform-origin: 50% 50% 150px;
+        transition: all .7s;
+
+        &::after{
+            .layer;
+            content: '';
+            background:rgba(1, 1, 100, 0.6);
+            border-radius: 15px;
+            z-index: -2;
+        }
+
+        .layer {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+        }
+
+        .photo{
+            .layer;
+            background: url(../img/600x600.jpg) no-repeat bottom center;
+            background-size: cover;
+            border-radius: 15px;
+            z-index: -1;
+            transition: inherit;
+            
+
+            &::before{
+                .layer;
+                content: '';
+                background: rgba(100, 0, 70, 0.3);
+                border-radius: 15px;
+                transition: inherit;
+            }    
+        }
+
+        h2{
+            padding-top: 100px;
+            transition: inherit;
+        }
+        p{
+            margin-bottom: 20px;
+            transition: inherit;
+        }
+        h3{
+            font-size: 45px;
+            color: #fff;
+        }
+
+        .chart{
+            margin: 20px 0;
+            font-size: 0;
+            .bar{
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                font-size: 12px;
+                display: inline-block;
+                background-color: #fff;
+                margin: 10px;
+                transform: rotate(-45deg);
+                position: relative;
+                transform-style: preserve-3d;
+
+                &::before{
+                    .layer;
+                    content: '';
+                    background-color: #fff;
+                    height: 0px;
+                    transform-origin: 50% 0 0;
+                    transform: rotateX(90deg) translateZ(-20px);
+                    transition: all .5s;
+                }
+
+                &::after{
+                    .layer;
+                    content: 'M';
+                    background-color: rgb(209, 13, 150);
+                    transform: translateZ(0px);
+                    transition: all .5s;
+                }
+
+                span{
+                    .layer;
+                    background-color: rgb(56, 13, 136);
+                    width: 0px;
+                    transform-origin: 0 50% 0;
+                    // text-align: right;
+                    transform: rotateY(-90deg) translateZ(0px);
+                    transition: all .5s;
+                }
+
+                .bar1{transition: all .3s;}
+                .bar2{transition: all .4s;}
+                .bar3{transition: all .35s;}
+                .bar4{transition: all .6s;}
+                .bar5{transition: all .2s;}
+                .bar6{transition: all .5s;}
+                .bar7{transition: all .15s;}
+            }
+        }
+    }
+}
+input:checked{
+    +.card{
+        transform: rotateX(50deg) translateZ(100px);
+        // background-origin: 50% 0;
+
+        &::after{
+            transform: translateZ(-20px);
+        }
+        .photo{
+            &::before{
+                background: rgba(46, 129, 224, 0.6);
+            }
+        }
+
+        h2{
+            opacity: 0;
+            transform: translateZ(50px);
+        }
+        p{
+            opacity: 0;
+            transform: translateZ(50px);
+        }
+
+        .chart{
+            .bar1{
+                &::before{height: 100px;}
+                &::after{transform: translateZ(100px);}
+                span{width: 100px;}
+            }
+            .bar2{
+                &::before{height: 130px;}
+                &::after{transform: translateZ(130px);}
+                span{width: 130px;}
+            }
+            .bar3{
+                &::before{height: 120px;}
+                &::after{transform: translateZ(120px);}
+                span{width: 120px;}
+            }
+            .bar4{
+                &::before{height: 200px;}
+                &::after{transform: translateZ(200px);}
+                span{width: 200px;}
+            }
+            .bar5{
+                &::before{height: 80px;}
+                &::after{transform: translateZ(80px);}
+                span{width: 80px;}
+            }
+            .bar6{
+                &::before{height: 170px;}
+                &::after{transform: translateZ(170px);}
+                span{width: 170px;}
+            }
+            .bar7{
+                &::before{height: 60px;}
+                &::after{transform: translateZ(60px);}
+                span{width: 60px;}
+            }
+        }   
+    }
+    
+}

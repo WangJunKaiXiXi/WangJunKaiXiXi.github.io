@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<span class="bigbox">
+			<i class="bbbbox"></i>
+			<span class="nnnav">
+				<ul>
+					<li><a href="">网易游戏</a></li>
+					<li><a href="">网易看游戏</a></li>
+					<li><a href="">电玩巴士</a></li>
+					<li><a href="">17173</a></li>
+					<li><a href="">178</a></li>
+					<li><a href="">不凡游戏</a></li>
+					<li><a href="">UUU9</a></li>
+					<li><a href="">腾讯游戏频道</a></li>
+					<li><a href="">口袋巴士</a></li>
+					<li><a href="">叶子猪</a></li>
+					<li><a href="">太平洋游戏</a></li>
+					<li><a href="">52PK</a></li>
+					<li><a href="">锐派</a></li>
+					<li><a href="">新浪游戏</a></li>
+					<li><a href="">天极网</a></li>
+					<li><a href="">要我玩</a></li>
+					<li><a href="">炉石咖啡厅</a></li>
+					<li><a href="">兔玩网</a></li>
+					<li><a href="">全球电竞网</a></li>
+					<li><a href="">掌游宝</a></li>
+					<li><a href="">多玩网</a></li>
+					<li class="rrright"><a href="">申请合作</a></li>
+				</ul>
+			</span>
+		</span>
+		
+		<style type="text/css">
+			.bigbox{
+				width: 20px;
+				height: 20px;
+				display: block;
+				background-color: #241101;
+				border: 1px solid #2d1702;
+				cursor: pointer;
+				position: relative;
+			}
+			.bbbbox{
+				width: 0;
+				height: 0;
+				/*background: yellow;*/
+				border-top: 8px solid #ac771f;
+				border-left: 8px solid transparent;
+				border-right: 8px solid transparent;
+				position: absolute;
+				top: 24%;
+				left: 12%;
+			}
+			.nnnav{
+				width: 756px;
+				/*height: 300px;*/
+				position: absolute;
+				top: 20px;
+				left: -1px;
+				background-color: #1f1009; 
+				border: 1px solid #261c12;
+				/*display: block;*/
+				padding-top: 20px;
+				visibility: hidden;
+				overflow: hidden;
+				
+				transform: scaleY(0);
+				-webkit-transform: scaleY(0);
+				transform-origin : 100% 0 0;
+				-webkit-transform-origin : 100% 0 0;
+				transition: all .3s;
+			}
+			
+			.bigbox:hover .bbbbox{
+				transform: rotate(180deg);
+				-webkit-transform: rotate(180deg);
+			}
+			.bigbox:hover .nnnav{
+				visibility: visible;
+				transform: scaleY(1);
+				-webkit-transform: scaleY(1);
+				transform-origin : 100% 0 0;
+				-webkit-transform-origin : 100% 0 0;
+			}
+			
+			.nnnav ul{
+				float: left;
+			}
+			.nnnav ul li{
+				float: left;
+				width: 108px;
+				margin-bottom: 8px;
+			}
+			body{
+				margin: 0;
+			}
+			ul,
+			li{
+				list-style: none;
+				margin: 0;
+			}
+			a{
+				text-decoration: none;
+				color: #fff;
+			}
+		</style>
+	</body>
+</html>

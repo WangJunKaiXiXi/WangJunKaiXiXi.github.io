@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    var Car = function(a, b, imgSrc){
+        this.a = a;
+        this.b = b;
+        this.imgSrc = imgSrc || 'img/zx.jpg';
+
+        this.drow = function(){
+            this.imgNode = document.createElement("img");
+            this.imgNode.src = this.imgSrc;
+            this.imgNode.style.position = "absolute";
+            this.imgNode.style.top = a + 'px';
+            this.imgNode.style.left = b + 'px';
+            this.imgNode.style.width = 100 + 'px';
+            this.imgNode.style.height = 100 + 'px';
+            document.body.appendChild(this.imgNode);
+        };
+    };
+
+    var tgzz = new Car(0, 0,);
+    tgzz.drow();
+
+    var zx = new Car(200, 0,'img/zx7.jpg');
+    zx.drow();
+
+    Car.prototype.ZxJg = function(i){
+        this.imgNode.style.left = parseInt(this.imgNode.style.left) + i + 'px';
+    };
+    Car.prototype.Wjz = function(i){
+        this.imgNode.style.top = parseInt(this.imgNode.style.top) + i + 'px';
+    }
+
+    // document.body.onkeyup = function(ev){
+    //     switch(ev.keycode){
+    //         case 38:
+    //             alert("123");
+    //             tgzz.ZxJg(5);
+    //             break;
+    //         case 40:
+    //         alert("1234");
+    //             tgzz.ZxJg(-2);
+    //             break;
+    //         case 87:
+    //         alert("1235");
+    //             zx.zxjg(5);
+    //             break;
+    //         case 83:
+    //         alert("1236");
+    //             zx.zxjg(-2);
+    //             break;
+    //         default:
+    //             return;       
+    //     };
+    // }
+
+    document.body.onkeydown = function(ev){
+        if(ev.keyCode == 39){
+            // alert("shang");
+            tgzz.ZxJg(5);
+        }else if(ev.keyCode == 37){
+            tgzz.ZxJg(-2);
+        }else if(ev.keyCode == 38){
+            tgzz.Wjz(-2);
+        }else if(ev.keyCode == 40){
+            tgzz.Wjz(4);
+        }else if(ev.keyCode == 68){
+            zx.ZxJg(8);
+        }else if(ev.keyCode == 65){
+            zx.ZxJg(-3);
+        }else if(ev.keyCode == 87){
+            zx.Wjz(-2);
+        }else if(ev.keyCode == 83){
+            zx.Wjz(4);
+        }
+    }
+
+
+
+
+
+    setInterval(function(){
+        tgzz.ZxJg(5);
+        zx.ZxJg(4);
+    },800);
+
+    // var windowX = window.innerWidth; //1366
+    // var windowY = window.innerHeight; //663
+    // // alert(windowX); 
+    // // alert(windowY); 
+    // var img = document.getElementsByTagName('img');
+    // var imgStyle = img.currentStyle ? img.currentStyle : window.getComputedStyle(img, null);
+    // var positionX = parseInt(imgStyle.left);
+    // var positionY = parseInt(imgStyle.top);
+    // var speed = 5;
+    // var direction = 'right';
+
+    // Car.prototype.moveR = function(){
+    //     positionX += speed;
+    //     this.img.style.left = positionX + 'px';
+    // }
+    // Car.prototype.moveL = function(){
+    //     positionX -= speed;
+    //     this.img.style.left = positionX + 'px';
+    // }
+    // Car.prototype.moveT = function(){
+    //     positionY -= speed;
+    //     this.img.style.top = positionY + 'px';
+    // }
+    // Car.prototype.moveB = function(){
+    //     positionY += speed;
+    //     this.img.style.top = positionY + 'px';
+    // }
+
+    // Car.prototype.collision = function(){
+    //     if(positionX <= 0){
+    //         direction = 'right';
+    //     }else if(positionX >= 1266){
+    //         direction = 'left';
+    //     }else if(positionY <= 0){
+    //         direction = 'bottom';
+    //     }else if(positionY >= 533){
+    //         direction = 'top';
+    //     }
+    // }; 
+
+    // ducument.body.onkeydown = function(ev){
+    //     switch(ev.keycode){
+    //         case 37:
+    //             direction = 'left';
+    //             break;
+    //         case 38:
+    //             direction = 'top';
+    //             break;
+    //         case 39:
+    //             direction = 'right';
+    //             break;
+    //         case 40:
+    //             direction = 'bottom';
+    //             break;        
+    //     };
+    // }
+    // setInterval(function(){
+    //     tgzz.collision();
+    //     if(direction === 'left'){
+    //         tgzz.moveL();
+    //     }else if(direction === 'top'){
+    //         tgzz.moveT();
+    //     }else if(direction === 'right'){
+    //         tgzz.moveR();
+    //     }else if(direction === 'bottom'){
+    //         tgzz.moveB();
+    //     }
+    // },500)
+</script>
+</html>

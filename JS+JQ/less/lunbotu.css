@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+}
+.bigbox {
+  width: 440px;
+  height: 300px;
+  box-sizing: border-box;
+  margin: 100px auto;
+  position: relative;
+}
+.bigbox .box img {
+  width: 440px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  vertical-align: middle;
+  transition: opacity .5s;
+  opacity: 0;
+}
+.bigbox .xob #prev,
+.bigbox .xob #next {
+  background-color: blue;
+  position: absolute;
+  top: 50%;
+  margin-top: -10.5px;
+  height: 21px;
+  line-height: 21px;
+  cursor: pointer;
+  font-family: "jiantou";
+  font-size: 40px;
+}
+.bigbox .xob #prev {
+  background-color: lightcoral;
+  left: 0;
+  margin-top: -16.5px;
+}
+.bigbox .xob #prev::after {
+  content: '\e001';
+}
+.bigbox .xob #next {
+  right: 0;
+}
+.bigbox .xob #next::after {
+  content: '\e002';
+}
+.bigbox #dian {
+  text-align: center;
+  position: absolute;
+  bottom: 13px;
+  left: 35%;
+}
+.bigbox #dian i {
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  font-size: 0;
+  display: inline-block;
+  margin: 0 10px;
+}
+@font-face {
+  font-family: "jiantou";
+  src: url("../bdfont.ttf");
+}
+.dabox {
+  width: 500px;
+  height: 550px;
+  margin: 50px auto;
+  position: relative;
+}
+.dabox .top {
+  height: 500px;
+}
+.dabox .top img.pic {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.dabox .top img.xxx {
+  opacity: 1;
+}
+.dabox .bottom {
+  height: 50px;
+  box-sizing: border-box;
+  background-color: #f599c4;
+}
+.dabox .bottom span {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+.dabox .bottom span b {
+  width: 121.2px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+.dabox .bottom span .Active {
+  background-color: #fa54d6;
+}
+.dabox .bottom span:hover {
+  background-color: #f78de0;
+}

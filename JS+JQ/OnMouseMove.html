@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS作业</title>
+</head>
+<body>
+    <!-- <div id="bigbigbox"> -->
+        <div id="bigbox">
+            <div id="box">box
+                <div id="box2"></div>
+            </div>  
+        </div>
+    <!-- </div> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #bigbox{
+            width: 200px;
+            height: 160px;
+            overflow: hidden;
+            margin: 100px auto;
+            /* margin-left: 100px; */
+            /* position: relative;
+            z-index: 1;
+            top: 100px;
+            left: 100px; */
+            display: block;
+        }
+        #box{
+            width: 200px;
+            height: 160px;
+            background-color: blue;
+            /* margin: 0 auto; */
+            position: relative;
+            z-index: 1;
+        }
+        #bigbox:hover #box2{
+            visibility: visible;
+        }
+        #box2{
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 40%;
+            background-color: green;
+            position: absolute;
+            /* top: 30px;
+            left: 30px; */
+            z-index: -1;
+            visibility: hidden;
+        }
+    </style>
+
+    <script>
+        var bigbox = document.getElementById('bigbox');
+        var box = document.getElementById('box');
+        var box2 = document.querySelector("#box2");
+        
+        // var box2Style = box2.currentSytle? box2.currentSytle: getComputedStyle(box2, null);
+        // var positionX = parseInt(box2Style.left) + 'px';
+        // var positionY = parseInt(box2Style.top) + 'px';
+
+        // document.onmousemove = function (ev) {
+        //     ev = ev || window.event;
+        //     var mousePos = mouseCoords(ev);
+        //     document.getElementById("box").innerHTML=mousePos.x+","+mousePos.y; //显示到P标签中
+        // }
+
+        // function mouseCoords(ev) {
+        //     if (ev.PageX && ev.PageY) {
+        //         return { x: ev.PageX, y: ev.PageY }
+        //     }
+        //     //做兼容
+        //     d = document.documentElement || document.body;
+        //     return { x: ev.clientX + d.scrollLeft - d.clientLeft, y: ev.clientY + d.scrollTop - d.clientTop }
+        // } 
+        // console.log(bigbox.offsetLeft);
+
+        bigbox.onmousemove = function(event){
+
+            box2.style.top = (event.pageY-bigbox.offsetTop) + 'px';
+            box2.style.left = (event.pageX-bigbox.offsetLeft) + 'px';
+            // console.log(box2.style.top);
+            // console.log(box2.style.top);
+            bigbox.offsetTop = 0;
+            bigbox.offsetLeft = 0;
+
+            // box2.style.backgroundColor = "green";
+            box2.style.transform = "scale(18)";
+            box2.style.transition = "transform 1.5s";
+        }
+
+        bigbox.onmouseleave = function(ev){
+            box2.style.top = (event.pageY-bigbox.offsetTop) + 'px';
+            box2.style.left = (event.pageX-bigbox.offsetLeft) + 'px';
+
+            box2.style.transform = "scale(0)";
+            box2.style.transition = "transform 1.5s";
+            // box2.style.backgroundColor = "gray";
+            // box2.style.transformOrigin = "60% 60%";
+        }
+
+    </script>
+</body>
+</html>

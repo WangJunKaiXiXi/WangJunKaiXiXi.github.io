@@ -1,0 +1,24 @@
+.bigbox {
+  width: 650px;
+  height: 600px;
+  margin: 0 auto;
+  background: url(../img/turntable-bg.jpg) no-repeat;
+  position: relative;
+}
+.bigbox #box1 {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 60px;
+  left: 120px;
+}
+.bigbox #box2 {
+  width: 174px;
+  height: 228px;
+  position: absolute;
+  top: 164px;
+  left: 253px;
+}
+.bigbox #box2 img {
+  cursor: pointer;
+}

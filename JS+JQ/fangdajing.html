@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大镜</title>
+</head>
+<body>
+    <div id="bigbox">
+        <div id="box1">
+            <img src="img/timg3.jpg" />
+        </div>
+        <div id="box2">
+            <img src="img/timg3.jpg" />
+        </div>
+        <div id="box3">
+            
+        </div>
+    </div>
+
+    <style>
+        #bigbox{
+            width: 450px;
+            height: 450px;
+            margin: 100px;
+            /* overflow: hidden; */
+            position: relative;
+        }
+        /* #bigbox:hover #box3{    
+            visibility: visible;
+        } */
+        #bigbox #box1 img{
+            width: 450px;
+            height: 450px;
+        }
+        #bigbox #box2{
+            width: 450px;
+            height: 450px;
+            position: absolute;
+            top: 0;
+            left: 480px;
+            /* visibility: hidden; */
+            /* background-color: yellowgreen; */
+            /* display: none; */
+            overflow: hidden;
+        }
+        #bigbox #box2 img{
+            width: 900px;
+            height: 900px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #bigbox #box3{
+            width: 225px;
+            height: 225px;
+            position: absolute;
+            /* top: 0;
+            left: 0; */
+            background-color: white;
+            opacity: 0.5;
+            /* visibility: hidden; */
+            /* display: none; */
+        }
+    </style>
+
+    <script>
+        var bigbox = document.getElementById("bigbox");
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+        var img = box2.getElementsByTagName("img")[0];
+
+        bigbox.onmousemove = function(ev){
+            var top = ev.clientY - bigbox.offsetTop - (box3.offsetHeight/2);
+            var left = ev.clientX - bigbox.offsetLeft - (box3.offsetWidth/2);
+            // console.log(ev.clientX + "/" + ev.clientY);
+
+            // var top = parseInt(box3.style.top);
+            // var left = parseInt(box3.style.left);
+            if(top <= 0){
+                top = 0
+            };
+            if(left <= 0){
+                left = 0
+            };
+            if(top > (bigbox.offsetHeight - box3.offsetHeight)){
+                top = (bigbox.offsetHeight - box3.offsetHeight)
+            };
+            if(left > (bigbox.offsetWidth - box3.offsetWidth)){
+                left = (bigbox.offsetWidth - box3.offsetWidth)
+            };
+            
+            box3.style.top = top + "px";
+            box3.style.left = left + "px";
+
+            box2.style.display = "block";
+            box3.style.display = "block";
+
+            
+            img.style.top = -top*2 + "px";
+            img.style.left = -left*2 + "px";
+            img.style.display = "block";
+        }
+
+        bigbox.onmouseleave = function(ev){
+            // img.style.display = "none";
+            box2.style.display = "none";
+            box3.style.display = "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<label class="switch">
+			<input type="checkbox" name="" id="" value="" />
+			<div class="bg">
+				
+			</div>
+		</label>
+		
+		
+		
+		<style type="text/css">
+			
+			.switch{
+				width: 50px;
+				height: 30px;
+				display: inline-block;
+				position: relative;
+			}
+			
+			.switch input{
+				display: none;
+			}
+			
+			.bg{
+				/*width: 50px;
+				height: 30px;*/
+				background-color: gray;
+				cursor: pointer;
+				
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				transition: all .5s;
+				-webkit-transition: all .5s;
+			}
+			
+			.bg:before{
+				content: '';
+				width: 23px;
+				height: 23px;
+				background-color: white;
+				
+				position: absolute;
+				top: 3px;
+				left: 3px;
+				transition: all .5s;
+				-webkit-transition: all .5s;
+			}
+			
+			input:checked+.bg{
+				background-color: blue;
+				/*transition: all .5s;*/
+			}
+			input:checked+.bg:before{
+				transform: translateX(22px);
+				-webkit-transform: translateX(22px);
+			}
+			/*input:focus+.bg{
+				box-shadow: 0 0 1px #2196F3;
+			}*/
+			body{
+				margin: 0;
+			}
+		</style>
+	</body>
+</html>

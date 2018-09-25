@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="bigbox">
+			<div class="box box1">
+				<h3>Background-position</h3>
+				<a href="" class="boxa boxa1"></a>
+				<a href="" class="boxa boxa2"></a>
+				<a href="" class="boxa boxa3"></a>
+			</div>
+			<hr />
+			<div class="box box2">
+				<h3>Svg-position-fixed</h3>
+					<span>
+						<object data="024.svg" type="image/svg+xml" width="50px" height="50px"></object>
+					</span>
+					<span>
+						<object data="025.svg" type="image/svg+xml" width="50px" height="50px"></object>
+					</span>
+					<span>
+						<object data="026.svg" type="image/svg+xml" width="50px" height="50px"></object>
+					</span>
+			</div>
+			<hr />
+			<div class="box box3">
+				<h3>font-picture</h3>
+				<span>
+					<i class="bdfont1 font"></i>
+				</span>
+				<span>
+					<i class="bdfont2 font"></i>
+				</span>
+				<span>
+					<i class="bdfont3 font"></i>
+				</span>
+			</div>
+		</div>
+		
+		<style type="text/css">
+			body{
+				width: 1349px;
+			}
+			.bigbox{
+				width: 1024px;
+				margin: 0 auto;
+			}
+			.box{
+				width: 1024px;
+				text-align: center;
+			}
+			h3{
+				font-size: 30px;
+				margin: 30px 0;
+			}
+			.box1 .boxa{
+				width: 50px;
+				height: 50px;
+				background: url(img/未标题.png) no-repeat;
+				display: inline-block;
+				margin: 0 30px;
+			}
+			.box1 .boxa2{background-position-y: -58px;}
+			.box1 .boxa3{background-position-y: -116px;}
+			
+			.box2 span{
+				margin: 0 30px;
+				padding-left: 4px;
+				display: inline-block;
+			}
+			/*.box2 span object{
+				fill: blue;
+			}*/
+			.box3 span{
+				width: 50px;
+				height: 50px;
+				display: inline-block;
+				padding: 0 30px;
+			}
+			@font-face{
+				font-family: "bdfont";
+				src: url("bdfont.ttf");
+			}
+			/*@font-face{
+				
+				src: url("fon.ttf");
+			}*/
+			.font{
+				font-family: "bdfont";
+				font-style: normal;
+			    font-size: 50px;
+			}
+			.bdfont1:after{
+				content: "\e002";
+				color: black;
+			}
+			.bdfont2:after{
+				content: "\e001";
+				color: hotpink;
+			}
+			.bdfont3:after{
+				content: "\e003";
+				color: blue;
+			}
+		</style>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <script>
+                // 作业1 写一个add函数 判断带的参数 如果只有一个参数 则返回参数+100
+                        //	  如果一个以上参数,那么返回参数的总和
+            
+                var add = function(){
+                    if(arguments.length === 1){
+                        return arguments[0]+100;
+                    };
+                    var sum = 0;
+                    if(arguments.length > 1){
+                        for(var i = 0; i < arguments.length; i++){
+                             sum += arguments[i];
+                        }
+                        return sum;
+                    }
+                }
+            </script>
+            
+            
+    <input type="button" id="btnA" value="btnA Count" onclick='addCountA(event)'>
+    <input type="button" id="btnB" value="btnB Count">
+    <script>
+            var btnB = document.getElementById("btnB"); 
+            // var val = document.getElementById("btn").value;
+        
+            // document.getElementById("btn").value = 'Count2';
+            // val = parseInt(document.getElementById("btn").value) + 1;
+            // alert(val);
+            var count = 0;
+            var addCountA = function(event){
+                count++;
+                console.log(this);
+                console.log(event.target);
+                event.target.value = 'btnA Count' + count;
+            }
+            
+            btnB.onclick = function(){
+                var count = 0;
+                console.log(this);
+
+                return function(){
+                    count++;
+                    this.value = "btnB Count" + count;
+                };
+            }();    
+                
+        
+        
+                // document.getElementById("classid").value="2";
+        </script>
+        
+        
+        
+        <script>
+            var x = {
+                pdd : 0,
+                add : function(){
+                    return this.pdd += 1;
+                }
+            }
+        
+        
+            // document.body.onkeydown = function(ev){
+            //     if(ev.keycode = 87){
+            //         alert("shang");
+            //     }    
+                
+            // }
+        </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="hugebox">
+			<div class="bigbox">
+				<div class="box1"></div>
+				<div class="box2"></div>
+				<div class="box3"></div>
+				<div class="box4"></div>
+				<div class="box5"></div>
+				<div class="box6"></div>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<style type="text/css">
+			.hugebox{
+				width: 100px;
+				height: 100px;
+				perspective: 400px;
+				margin: 100px auto;
+			}
+			.bigbox{
+				width: 100px;
+				height: 100px;
+				/*perspective: 400px;*/
+				transform-style: preserve-3d;
+				position: relative;
+				padding-top: 70px;
+				animation: round 4s infinite ease-in-out;
+			}
+			.box1{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				position: absolute;
+				
+				transform: rotateY(90deg) translateZ(100px);
+				/*animation: round 4s infinite;*/
+			}
+			.box2{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				
+				transform: translateZ(100px);
+				-webkit-transform: translateZ(100px);
+				/*animation: round 4s infinite;*/
+			}
+			.box3{
+				width: 100px;
+				height: 100px;
+				background-color: green;
+				position: absolute;
+				
+				transform: rotateY(-90deg) translateZ(100px);
+				/*animation: round 4s infinite;*/
+			}
+			.box4{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+				
+				transform: rotateY(180deg) translateZ(100px);
+				/*animation: round 4s infinite;*/
+			}
+			.box5{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+				
+				transform: rotateX(90deg) translateZ(100px);
+				/*animation: round 4s infinite;*/
+			}
+			.box6{
+				width: 100px;
+				height: 100px;
+				background-color: purple;
+				position: absolute;
+				
+				transform: rotateX(-90deg) translateZ(100px);
+				/*animation: round 4s infinite;*/
+			}
+			
+			@keyframes round{
+				0%{transform: rotateX(0deg) rotateY(0deg);}
+				50%{transform: rotateX(360deg) rotateY(0deg);}
+				100%{transform: rotateX(360deg) rotateY(360deg);}
+			}
+		</style>
+		
+		<script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
+	</body>
+</html>

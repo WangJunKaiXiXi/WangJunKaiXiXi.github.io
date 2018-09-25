@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab-controls">
+            <li class="active">暗裔剑魔</li>
+            <li>刀锋意志</li>
+            <li>放逐之刃</li>
+            <li>疾风剑豪</li>
+        </div>
+        <div class="tab-imgs">
+            <img class="active" src="img/jianmo.jpg" />
+            <img src="img/daomei.jpg" />
+            <img src="img/ruiwen.jpg" />
+            <img src="img/ruiwenyasuo.jpg" />
+        </div>
+    </div>
+</body>
+</html>
+
+
+<style>
+    .tab{
+        width: 500px;
+        height: 300px;
+        margin: 80px auto 0;
+        position: relative;
+    }
+    .tab .tab-controls{
+        width: 500px;
+        height: 20px;
+    }
+    li{list-style: none;}
+    .tab .tab-controls li{
+        width: 25%;
+        background-color: lightgray;
+        cursor: pointer;
+        text-align: center;
+        float: left;
+    }
+    .tab .tab-controls li.active{
+        background-color: gray;
+        color: white;
+    }
+    .tab .tab-imgs{
+        width: 500px;
+        height: 280px;
+    }
+    .tab .tab-imgs img{
+        width: 500px;
+        height: 280px;
+        opacity: 0;
+        position: absolute;
+        /* top: 0; */
+        left: 0;
+    }
+    .tab .tab-imgs img.active{
+        opacity: 1;
+    }
+</style>
+
+<script>
+    var tabControls = document.querySelectorAll('.tab .tab-controls li');
+    var tabImgs = document.querySelectorAll('.tab .tab-imgs img');
+
+
+    var siblings = function(ele){
+        var nodes = [];
+        var allNodes = ele.parentNode.children;
+        for(var i = 0; i < allNodes.length; i++){
+            if(allNodes[i] !== ele){
+                nodes.push(allNodes[i]);
+            }
+        }
+        return nodes;
+    };
+
+    var addClass = function(element, className){
+        var oldClass = element.className;
+        var classArray = oldClass.split(' ');
+        if(classArray.indexOf(className) === -1){
+            classArray.push(className);
+        }
+        element.className = classArray.join(' ').trim();
+    };
+
+    var removeClass = function(element, className){
+        var oldClass = element.className;
+        var classArray = oldClass.split(' ');
+        if(classArray.indexOf(className) !== -1){
+            classArray.splice(classArray.indexOf(className), 1);
+        }
+
+        if(classArray.length === 0){
+            element.removeAttribute('class');
+        }else{
+            element.className = classArray.join(' ').trim();
+        }
+    };
+
+    for(var i = 0; i < tabControls.length; i++){
+        tabControls[i].index = i;
+        tabControls[i].onclick = function(){
+            addClass(this,'active');
+            var otherTabControls = siblings(this);
+            for(var j = 0; j < otherTabControls.length; j++){
+                removeClass(otherTabControls[j],'active');
+            }
+
+            addClass(tabImgs[this.index],'active');
+            var otherTabImgs = siblings(tabImgs[this.index]);
+            for(var j = 0; j < otherTabImgs.length; j ++){
+                removeClass(otherTabImgs[j],'active');
+            }
+
+        }
+    };
+</script>

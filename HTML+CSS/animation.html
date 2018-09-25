@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="donghua"></div>
+		<div class="bashen"></div>
+		<div class="jiangshi"></div>
+		
+		<style type="text/css">
+			.donghua{
+				width: 180px;
+				height: 300px;
+				background: url(sprites.png) no-repeat;
+				
+				animation-name: dog;
+				-webkit-animation-name: dog;
+				animation-duration: 2s;
+				-webkit-animation-duration: 2s;
+				animation-iteration-count: infinite;
+				-webkit-animation-iteration-count: infinite;
+				animation-timing-function: steps(6,start);
+				-webkit-animation-timing-function: steps(6,start);
+			}
+			
+			@keyframes dog{
+				0%{background-position-x: 0;}
+				100%{background-position-x: 100%;}
+			}
+			@-webkit-keyframes dog{
+				0%{background-position-x: 0;}
+				100%{background-position-x: 100%;}
+			}
+			
+			
+			
+			.bashen{
+				width: 73.6666666666667px;
+				height: 81px;
+				background: url(sprites-IORI.jpg) no-repeat;
+				
+				animation: iori 2s infinite steps(26,start);
+				-webkit-animation: iori 2s infinite steps(26,start);
+			}
+			
+			@keyframes iori{
+				0%{background-position-x: 0;}
+				100%{background-position-x: 100%;}
+			}
+			@-webkit-keyframes iori{
+				0%{background-position-x: 0;}
+				100%{background-position-x: 100%;}
+			}
+			
+			.jiangshi{
+				width: 200px;
+				height: 312px;
+				background: url(walkingdead.png) no-repeat;
+				
+				animation: walk 1s infinite steps(9,start);
+				-webkit-animation: walk 1s infinite steps(9,start);
+			}
+			
+			@keyframes walk{
+				0%{background-position-x: 0;}
+				100%{background-position-x: 100%;}
+			}
+			@-webkit-keyframes walk{
+				0%{background-position-x: 0;}
+				100%{background-position-x: 100%;}
+			}
+		</style>
+	</body>
+</html>

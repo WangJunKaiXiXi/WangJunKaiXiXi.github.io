@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="bigbox">
+				<div class="box1 box"></div>
+				<div class="box2 box"></div>
+				<div class="box3 box"></div>
+				<div class="box4 box"></div>
+				<div class="box5 box"></div>
+				<div class="box6 box"></div>
+			</div>
+		</div>
+		
+		
+		<style type="text/css">
+			.container{
+				width: 100px;
+				height: 100px;
+				
+				perspective: 400px;
+				margin: 100px auto;
+				padding-top: 70px;
+			}
+			.bigbox{
+				width: 100px;
+				height: 100px;
+				position: relative;
+				transform-style: preserve-3d;
+				animation: yuan 3s infinite ease-in-out;
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				border-radius: 50%;				
+			}
+			.box1{
+				background-color: pink;
+				transform: translateZ(100px);
+			}
+			.box2{
+				background-color: lawngreen;
+				transform: rotateY(180deg) translateZ(100px);
+			}
+			.box3{
+				background-color: lightblue;
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			.box4{
+				background-color: darkorange;
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			.box5{
+				background-color: darkcyan;
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			.box6{
+				background-color: deepskyblue;
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			
+			@keyframes yuan{
+				50%{transform: rotateX(360deg) rotateY(0deg) rotateZ(15deg);}
+				100%{transform: rotateX(360deg) rotateY(360deg) rotateZ(23deg);}
+			}
+			
+		</style>
+		
+		<script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
+	</body>
+</html>
