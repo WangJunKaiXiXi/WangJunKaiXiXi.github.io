@@ -21,7 +21,7 @@ SVG https://WangJunKaiXiXi.github.io/SVG/Mon-circle.html
 
 SVG 动画 https://WangJunKaiXiXi.github.io/SVG/Svg-animate.html
 
-JS https://WangJunKaiXiXi.github.io/JS+JQ/azxc.html
+JS小球运动 https://WangJunKaiXiXi.github.io/JS+JQ/azxc.html
 
 抽奖 https://WangJunKaiXiXi.github.io/JS+JQ/choujiang.html
 
